@@ -5,13 +5,13 @@ class GuestbookDAO(object):
 #Initialize our DAO class with the databse and set the MOngoDB collection we want to use
 	def __init__(self, databse):
 		self.db = databse
-		self.mynames = databse.mynames
+		self.mynames = database.mynames
 
 #This function will handle the finding of names
 	def find_names(self):
 		l=[]
 		for each_name in self.mynames.find():
-			l.append({'name': each_name['name'], 'email': each_name['email']})
+			l.append({'id': each_name['_id'], 'name': each_name['name'], 'email': each_name['email']})
 		
 		return l
 
@@ -19,3 +19,4 @@ class GuestbookDAO(object):
 	def insert_name(self, newname, newemail):
 		newname = {'name' : newname, 'email': newemail}
 		self.mynames.insert(newname)
+
