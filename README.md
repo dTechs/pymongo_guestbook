@@ -2,5 +2,6 @@
 
 Guest book using pyhton as server side and mongodb as backend.
 
-##pymongo driver
-##bullet
+##Required
+##pymongo driver (bullet framework)
+##mongodb installed and running
